@@ -88,8 +88,8 @@ impl FromStr for Outcome {
     }
 }
 
-fn get_hand_state_by_expected_outcome(opponent: HandState, player: Outcome) -> HandState {
-    match (opponent, player) {
+fn get_hand_state_by_expected_outcome(opponent: HandState, expected_outcome: Outcome) -> HandState {
+    match (opponent, expected_outcome) {
         (HandState::Rock, Outcome::Lose) | (HandState::Paper, Outcome::Win) => HandState::Scissors,
         (HandState::Paper, Outcome::Lose) | (HandState::Scissors, Outcome::Win) => HandState::Rock,
         (HandState::Scissors, Outcome::Lose) | (HandState::Rock, Outcome::Win) => HandState::Paper,
