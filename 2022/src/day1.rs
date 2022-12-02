@@ -8,12 +8,12 @@ pub fn day_1() {
         .expect("Error while reading file");
     let calories_by_elves = get_calories_by_elves(&data);
     let max_index_and_value = get_max_index_and_value(&calories_by_elves);
-    let sum_calories_of_top3_elves = get_sum_of_top_values(calories_by_elves, 3);
+    let total_calories_of_top3_elves = get_sum_of_top_values(calories_by_elves, 3);
     println!(
         "Day 1:\nElf no.{} has {} calories.\nTotal calories of top 3 elves: {}.",
         max_index_and_value.0 + 1,
         max_index_and_value.1,
-        sum_calories_of_top3_elves
+        total_calories_of_top3_elves
     );
 }
 
