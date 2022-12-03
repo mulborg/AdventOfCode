@@ -1,10 +1,12 @@
 use crate::day1::day_1;
 use crate::day2::day_2;
+use crate::day3::day_3;
 use colored::Colorize;
 use std::env;
 
 mod day1;
 mod day2;
+mod day3;
 
 fn main() {
     println!("{}", "Advent of Code 2022".green());
@@ -26,6 +28,7 @@ fn main() {
     match day {
         1 => day_1(),
         2 => day_2(),
+        3 => day_3(),
         _ => show_error(message),
     }
 }
