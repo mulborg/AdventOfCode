@@ -1,15 +1,15 @@
-pub fn day_3(input: &String) {
+pub fn day_3(input: &str) {
     println!(
         "Part 1: sum of the priorities: {}.",
-        calculate_sum_of_priorities(&input)
+        calculate_sum_of_priorities(input)
     );
     println!(
         "Part 2: sum of group priorities: {}.",
-        calculate_sum_of_priorities_for_groups(&input)
+        calculate_sum_of_priorities_for_groups(input)
     );
 }
 
-fn calculate_sum_of_priorities(input: &String) -> u32 {
+fn calculate_sum_of_priorities(input: &str) -> u32 {
     let mut sum_of_priorities = 0;
     for mut line in input.lines() {
         line = line.trim();
@@ -20,7 +20,7 @@ fn calculate_sum_of_priorities(input: &String) -> u32 {
     sum_of_priorities
 }
 
-fn calculate_sum_of_priorities_for_groups(input: &String) -> u32 {
+fn calculate_sum_of_priorities_for_groups(input: &str) -> u32 {
     let mut sum_of_priorities = 0;
     let mut lines = Vec::new();
     for mut line in input.lines() {
@@ -41,7 +41,7 @@ fn calculate_priority_of_rucksack(input: &str) -> u32 {
     }
     let half_length = input.len() / 2;
     priority += match contains_at_least_one_char_in_every_input(
-        &vec![&input[half_length..]],
+        &[&input[half_length..]],
         &input[0..half_length],
     ) {
         Some(item_type) => calculate_priority(item_type),
@@ -52,7 +52,7 @@ fn calculate_priority_of_rucksack(input: &str) -> u32 {
 
 fn calculate_priority_of_group(input: &[&str]) -> u32 {
     let mut priority = 0;
-    priority += match contains_at_least_one_char_in_every_input(&input[1..], &input[0]) {
+    priority += match contains_at_least_one_char_in_every_input(&input[1..], input[0]) {
         Some(item_type) => calculate_priority(item_type),
         None => 0,
     };

@@ -1,15 +1,15 @@
-pub fn day_4(input: &String) {
+pub fn day_4(input: &str) {
     println!(
         "Part 1: count of assignment pairs where one range fully contains the other: {}",
-        count_fully_contained_assignment_pairs(&input)
+        count_fully_contained_assignment_pairs(input)
     );
     println!(
         "Part 2: count of assignment pairs where ranges overlap: {}",
-        count_overlapped_assignment_pairs(&input)
+        count_overlapped_assignment_pairs(input)
     );
 }
 
-fn count_fully_contained_assignment_pairs(input: &String) -> u16 {
+fn count_fully_contained_assignment_pairs(input: &str) -> u16 {
     let mut counter = 0;
     for mut line in input.lines() {
         line = line.trim();
@@ -28,7 +28,7 @@ fn count_fully_contained_assignment_pairs(input: &String) -> u16 {
     counter
 }
 
-fn count_overlapped_assignment_pairs(input: &String) -> u16 {
+fn count_overlapped_assignment_pairs(input: &str) -> u16 {
     let mut counter = 0;
     for mut line in input.lines() {
         line = line.trim();
@@ -55,7 +55,7 @@ fn parse_section(input: &str) -> u128 {
     let end: u8 = section[1].parse().unwrap();
     let mut id = 0;
     for i in start..=end {
-        id = id | (1 << i);
+        id |= 1 << i;
     }
     id
 }

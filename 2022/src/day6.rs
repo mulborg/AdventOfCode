@@ -1,16 +1,16 @@
-pub fn day_6(input: &String) {
+pub fn day_6(input: &str) {
     println!(
         "Part 1: number of characters processed before the first start-of-packet marker is detected: {}",
-        get_index_of_char_after_first_x_distinct_chars(&input, 4)
+        get_index_of_char_after_first_x_distinct_chars(input, 4)
     );
     println!(
         "Part 2: number of characters processed before the first start-of-message marker is detected: {}",
-        get_index_of_char_after_first_x_distinct_chars(&input, 14)
+        get_index_of_char_after_first_x_distinct_chars(input, 14)
     );
 }
 
 fn get_index_of_char_after_first_x_distinct_chars(
-    input: &String,
+    input: &str,
     number_of_distinct_chars: usize,
 ) -> usize {
     let index = input

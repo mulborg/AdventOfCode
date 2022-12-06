@@ -1,5 +1,5 @@
-pub fn day_1(input: &String) {
-    let calories_by_elves = get_calories_by_elves(&input);
+pub fn day_1(input: &str) {
+    let calories_by_elves = get_calories_by_elves(input);
     let max_index_and_value = get_max_index_and_value(&calories_by_elves);
     let total_calories_of_top3_elves = get_sum_of_top_values(calories_by_elves, 3);
     println!(
@@ -10,7 +10,7 @@ pub fn day_1(input: &String) {
     );
 }
 
-fn get_calories_by_elves(input: &String) -> Vec<u32> {
+fn get_calories_by_elves(input: &str) -> Vec<u32> {
     let mut calories = vec![0];
     for mut line in input.lines() {
         line = line.trim();
@@ -29,7 +29,7 @@ fn get_calories_by_elves(input: &String) -> Vec<u32> {
     calories
 }
 
-fn get_max_index_and_value(items: &Vec<u32>) -> (usize, u32) {
+fn get_max_index_and_value(items: &[u32]) -> (usize, u32) {
     let mut max = (0, items[0]);
     for (index, &x) in items.iter().enumerate() {
         if x > max.1 {

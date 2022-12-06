@@ -1,17 +1,17 @@
 use std::str::FromStr;
 
-pub fn day_2(input: &String) {
+pub fn day_2(input: &str) {
     println!(
         "Part 1: total score: {}.",
-        play_rock_paper_scissors_part1(&input)
+        play_rock_paper_scissors_part1(input)
     );
     println!(
         "Part 2: total score: {}.",
-        play_rock_paper_scissors_part2(&input)
+        play_rock_paper_scissors_part2(input)
     );
 }
 
-fn play_rock_paper_scissors_part1(input: &String) -> u32 {
+fn play_rock_paper_scissors_part1(input: &str) -> u32 {
     let mut total_score = 0;
     for mut line in input.lines() {
         line = line.trim();
@@ -26,7 +26,7 @@ fn play_rock_paper_scissors_part1(input: &String) -> u32 {
     total_score
 }
 
-fn play_rock_paper_scissors_part2(input: &String) -> u32 {
+fn play_rock_paper_scissors_part2(input: &str) -> u32 {
     let mut total_score = 0;
     for mut line in input.lines() {
         line = line.trim();
