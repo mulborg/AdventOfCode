@@ -1,18 +1,11 @@
-use std::fs;
-use std::io::Read;
-
-pub fn day_6() {
-    let mut file = fs::File::open("./input_files/day6_input.txt").expect("File not found");
-    let mut data = String::new();
-    file.read_to_string(&mut data)
-        .expect("Error while reading file");
+pub fn day_6(input: &String) {
     println!(
         "Part 1: number of characters processed before the first start-of-packet marker is detected: {}",
-        get_index_of_char_after_first_x_distinct_chars(&data, 4)
+        get_index_of_char_after_first_x_distinct_chars(&input, 4)
     );
     println!(
         "Part 2: number of characters processed before the first start-of-message marker is detected: {}",
-        get_index_of_char_after_first_x_distinct_chars(&data, 14)
+        get_index_of_char_after_first_x_distinct_chars(&input, 14)
     );
 }
 

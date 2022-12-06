@@ -1,12 +1,5 @@
-use std::fs;
-use std::io::Read;
-
-pub fn day_1() {
-    let mut file = fs::File::open("./input_files/day1_input.txt").expect("File not found");
-    let mut data = String::new();
-    file.read_to_string(&mut data)
-        .expect("Error while reading file");
-    let calories_by_elves = get_calories_by_elves(&data);
+pub fn day_1(input: &String) {
+    let calories_by_elves = get_calories_by_elves(&input);
     let max_index_and_value = get_max_index_and_value(&calories_by_elves);
     let total_calories_of_top3_elves = get_sum_of_top_values(calories_by_elves, 3);
     println!(

@@ -1,19 +1,13 @@
 use regex::Regex;
-use std::fs;
-use std::io::Read;
 
-pub fn day_5() {
-    let mut file = fs::File::open("./input_files/day5_input.txt").expect("File not found");
-    let mut data = String::new();
-    file.read_to_string(&mut data)
-        .expect("Error while reading file");
+pub fn day_5(input: &String) {
     println!(
         "Part 1: top of stacks after the rearrangement with CrateMover 9000: {}",
-        rearrange_stacks_with_cratemover9000(&data)
+        rearrange_stacks_with_cratemover9000(&input)
     );
     println!(
         "Part 2: top of stacks after the rearrangement with CrateMover 9001: {}",
-        rearrange_stacks_with_cratemover9001(&data)
+        rearrange_stacks_with_cratemover9001(&input)
     );
 }
 

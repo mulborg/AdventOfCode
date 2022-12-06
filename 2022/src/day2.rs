@@ -1,19 +1,13 @@
-use std::fs;
-use std::io::Read;
 use std::str::FromStr;
 
-pub fn day_2() {
-    let mut file = fs::File::open("./input_files/day2_input.txt").expect("File not found");
-    let mut data = String::new();
-    file.read_to_string(&mut data)
-        .expect("Error while reading file");
+pub fn day_2(input: &String) {
     println!(
         "Part 1: total score: {}.",
-        play_rock_paper_scissors_part1(&data)
+        play_rock_paper_scissors_part1(&input)
     );
     println!(
         "Part 2: total score: {}.",
-        play_rock_paper_scissors_part2(&data)
+        play_rock_paper_scissors_part2(&input)
     );
 }
 

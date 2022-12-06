@@ -1,18 +1,11 @@
-use std::fs;
-use std::io::Read;
-
-pub fn day_4() {
-    let mut file = fs::File::open("./input_files/day4_input.txt").expect("File not found");
-    let mut data = String::new();
-    file.read_to_string(&mut data)
-        .expect("Error while reading file");
+pub fn day_4(input: &String) {
     println!(
         "Part 1: count of assignment pairs where one range fully contains the other: {}",
-        count_fully_contained_assignment_pairs(&data)
+        count_fully_contained_assignment_pairs(&input)
     );
     println!(
         "Part 2: count of assignment pairs where ranges overlap: {}",
-        count_overlapped_assignment_pairs(&data)
+        count_overlapped_assignment_pairs(&input)
     );
 }
 

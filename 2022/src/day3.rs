@@ -1,18 +1,11 @@
-use std::fs;
-use std::io::Read;
-
-pub fn day_3() {
-    let mut file = fs::File::open("./input_files/day3_input.txt").expect("File not found");
-    let mut data = String::new();
-    file.read_to_string(&mut data)
-        .expect("Error while reading file");
+pub fn day_3(input: &String) {
     println!(
         "Part 1: sum of the priorities: {}.",
-        calculate_sum_of_priorities(&data)
+        calculate_sum_of_priorities(&input)
     );
     println!(
         "Part 2: sum of group priorities: {}.",
-        calculate_sum_of_priorities_for_groups(&data)
+        calculate_sum_of_priorities_for_groups(&input)
     );
 }
 
