@@ -4,6 +4,7 @@ use crate::day3::day_3;
 use crate::day4::day_4;
 use crate::day5::day_5;
 use crate::day6::day_6;
+use crate::day7::day_7;
 use colored::Colorize;
 use std::env;
 use std::fs;
@@ -15,6 +16,7 @@ mod day3;
 mod day4;
 mod day5;
 mod day6;
+mod day7;
 
 fn main() {
     println!("{}", "Advent of Code 2022".green());
@@ -46,6 +48,7 @@ fn main() {
         4 => day_4(&input),
         5 => day_5(&input),
         6 => day_6(&input),
+        7 => day_7(&input),
         _ => show_error(message),
     }
 }
