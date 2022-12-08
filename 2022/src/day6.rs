@@ -13,7 +13,7 @@ fn get_index_of_char_after_first_x_distinct_chars(
     input: &str,
     number_of_distinct_chars: usize,
 ) -> usize {
-    let index = input
+    input
         .chars()
         .enumerate()
         .collect::<Vec<(usize, char)>>()
@@ -31,8 +31,8 @@ fn get_index_of_char_after_first_x_distinct_chars(
         .unwrap()
         .last()
         .unwrap()
-        .0;
-    index + 1
+        .0
+        + 1
 }
 
 #[cfg(test)]
